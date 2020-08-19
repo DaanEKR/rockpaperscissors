@@ -1,0 +1,45 @@
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.button-group {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.button {
+  cursor: pointer;
+  background-color: #ffffff;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  border: 15px solid #0044ff;
+  outline: none;
+
+  &:hover {
+    background-color: #bdbdbd;
+    border: 15px solid #4778ffef;
+  }
+
+  &--scissors {
+    border: 15px solid #eba00e;
+
+    &:hover {
+      border: 15px solid #fab835;
+    }
+  }
+
+  &--rock {
+    border: 15px solid #db3857;
+    margin: 50px 0 0 124px;
+
+    &:hover {
+      border: 15px solid #f54a69;
+    }
+  }
+}
