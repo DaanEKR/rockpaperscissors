@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderModule } from './components/header/header.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +11,6 @@ import { HeaderModule } from './components/header/header.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HeaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

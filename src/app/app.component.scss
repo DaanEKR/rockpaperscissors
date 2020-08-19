@@ -1,3 +1,32 @@
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  background-color: none;
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #959595;
+  border-radius: 10px;
+  width: 600px;
+  padding: 20px;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  width: 160px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+}
+
+.points {
+  font-size: 40px;
+}
 
 .container {
   display: flex;
@@ -5,7 +34,13 @@
   margin-top: 50px;
 }
 
+.triangle {
+  margin-top: 57px;
+}
+
 .button-group {
+  position: absolute;
+
   width: 400px;
   display: flex;
   justify-content: space-between;

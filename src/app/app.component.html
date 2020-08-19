@@ -1,9 +1,19 @@
 
-<app-header></app-header>
+<header>
+  <div class="block">
+    <img src="../../../assets/images/logo.svg">
+    <div class="score">
+      <h2>SCORE</h2>
+      <p class="points">{{points}}</p>
+    </div>
+  </div>
+</header>
+
 <div class="container">
+  <img class="triangle" src="../assets/images/bg-triangle.svg">
   <div class="button-group">
-    <button (click)="checkResult($event)" class="button" value="paper"><img value="paper"src="../assets/images/icon-paper.svg"></button>
-    <button (click)="checkResult($event)"class="button button--scissors" value="scissors"><img value="scissors" src="../assets/images/icon-scissors.svg"></button>
-    <button (click)="checkResult($event)" class="button button--rock" value="rock"><img value="rock" src="../assets/images/icon-rock.svg"></button>
+    <button (click)="checkResult($event)" class="button" value=0><img value= 0 src="../assets/images/icon-paper.svg"></button>
+    <button (click)="checkResult($event)" class="button button--scissors" value=1><img value=1 src="../assets/images/icon-scissors.svg"></button>
+    <button (click)="checkResult($event)" class="button button--rock" value=2><img value=2 src="../assets/images/icon-rock.svg"></button>
   </div>
 </div>
