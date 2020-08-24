@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConstantPool } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -6,30 +7,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+  choosenButton = '';
   title = 'rockpaperscissors';
   points = JSON.parse(localStorage.getItem('points'));
-  options = [0, 1, 2]
+  showResult = false;
+  opponentChoice = '';
 
   ngOnInit(){
+    this.getData()
+  }
+
+  getData(){
     this.points = JSON.parse(localStorage.getItem('points'));
   }
-  checkResult(event): void {
-    let cpuChoice = this.options[Math.floor(Math.random()*this.options.length)];
-    let target = event.target;
-    let idAttr = target.attributes.value;
-    let value = idAttr.nodeValue;
-    console.log(value)
-    console.log(cpuChoice)
 
-    if( value == 0 && cpuChoice == 2 || value == 1  && cpuChoice == 0 || value == 2  && cpuChoice == 1){
-      let addPoint = this.points+1;
+  resetScore(){
+    localStorage.setItem("points", JSON.stringify(0));
+    this.ngOnInit();
+  }
+
+  goBack(){
+    this.choosenButton = '';
+  }
+
+  checkResult(choosenButton): void {
+    const buttons = ['rock', 'paper', 'scissors'];
+    const cpuChoice = buttons[Math.floor(Math.random()*buttons.length)];
+    if( choosenButton === 'paper' && cpuChoice === 'rock' || choosenButton === 'scissors'  && cpuChoice === 'paper' || choosenButton === 'rock'  && cpuChoice === 'scissors'){
+      const addPoint = this.points+1;
       localStorage.setItem("points", JSON.stringify(addPoint));
-      alert('yes')
-      this.ngOnInit();
-    } else {
-      console.log("rip")
+      this.getData();
     }
-
-
+    this.opponentChoice = cpuChoice;
   }
 }

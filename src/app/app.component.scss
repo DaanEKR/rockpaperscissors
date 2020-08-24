@@ -17,15 +17,37 @@ header {
 .score {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 5px;
   width: 160px;
   border-radius: 10px;
   background-color: #f8f8f8;
+  color: #2a46c0;
 }
 
+.reset {
+  cursor: pointer;
+  outline: none;
+  padding: 5px;
+  width: 120px;
+  height: 50px;
+  margin-top: 49px;
+  border-radius: 10px;
+  color: #2a46c0;
+  border: 2px solid #888888;
+  background-color: #f8f8f8;
+
+  &:hover {
+    border: 2px solid #ffffff;
+    background-color: #c7c7c7;
+
+  }
+
+}
 .points {
   font-size: 40px;
+
 }
 
 .container {
@@ -47,7 +69,11 @@ header {
   flex-wrap: wrap;
 }
 
-.button {
+.icon {
+  pointer-events: none;
+}
+
+.paper {
   cursor: pointer;
   background-color: #ffffff;
   width: 150px;
@@ -60,21 +86,68 @@ header {
     background-color: #bdbdbd;
     border: 15px solid #4778ffef;
   }
+}
 
-  &--scissors {
-    border: 15px solid #eba00e;
+.scissors {
+  cursor: pointer;
+  background-color: #ffffff;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  border: 15px solid #eba00e;
+  outline: none;
 
-    &:hover {
-      border: 15px solid #fab835;
-    }
-  }
-
-  &--rock {
-    border: 15px solid #db3857;
-    margin: 50px 0 0 124px;
-
-    &:hover {
-      border: 15px solid #f54a69;
-    }
+  &:hover {
+    border: 15px solid #fab835;
   }
 }
+
+.rock {
+  cursor: pointer;
+  background-color: #ffffff;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  outline: none;
+  border: 15px solid #db3857;
+  margin: 50px 0 0 124px;
+
+  &:hover {
+    border: 15px solid #f54a69;
+  }
+
+  &--result {
+    margin: 0;
+  }
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.result-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+
+  &__choices {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.results {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+

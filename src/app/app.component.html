@@ -2,18 +2,35 @@
 <header>
   <div class="block">
     <img src="../../../assets/images/logo.svg">
+    <button class="reset" (click)="resetScore()">RESET POINTS</button>
     <div class="score">
       <h2>SCORE</h2>
-      <p class="points">{{points}}</p>
+      <p class="points">{{ points }}</p>
     </div>
   </div>
 </header>
-
-<div class="container">
+<div *ngIf="choosenButton === ''" class="container">
   <img class="triangle" src="../assets/images/bg-triangle.svg">
   <div class="button-group">
-    <button (click)="checkResult($event)" class="button" value=0><img value= 0 src="../assets/images/icon-paper.svg"></button>
-    <button (click)="checkResult($event)" class="button button--scissors" value=1><img value=1 src="../assets/images/icon-scissors.svg"></button>
-    <button (click)="checkResult($event)" class="button button--rock" value=2><img value=2 src="../assets/images/icon-rock.svg"></button>
+    <button (click)="checkResult(choosenButton = 'paper')" class="paper" value="paper"><img class="icon" src="../assets/images/icon-paper.svg"></button>
+    <button (click)="checkResult(choosenButton = 'scissors')" class="scissors" value="scissors"><img class="icon" src="../assets/images/icon-scissors.svg"></button>
+    <button (click)="checkResult(choosenButton = 'rock')" class="rock" value="rock"><img class="icon" src="../assets/images/icon-rock.svg"></button>
   </div>
+</div>
+<div *ngIf="choosenButton !== ''" class="result-container">
+  <header class="header">
+    <h1 class="result" >Results</h1>
+    <h2></h2>
+  </header>
+    <div class="results">
+      <div class="result__choices">
+          <h2>Your Choice</h2>
+          <button class="{{ choosenButton }} {{ choosenButton }}--result"><img class="icon" src="../assets/images/icon-{{choosenButton}}.svg"></button>
+      </div>
+      <button class="reset" (click)="goBack()">Play Again</button>
+      <div class="result__choices">
+          <h2>OpponentChoice</h2>
+          <button class="{{ opponentChoice }} {{ opponentChoice }}--result "><img class="icon" src="../assets/images/icon-{{opponentChoice}}.svg"></button>
+      </div>
+    </div>
 </div>
