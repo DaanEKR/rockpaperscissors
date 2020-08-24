@@ -12,25 +12,24 @@
 <div *ngIf="choosenButton === ''" class="container">
   <img class="triangle" src="../assets/images/bg-triangle.svg">
   <div class="button-group">
-    <button (click)="checkResult(choosenButton = 'paper')" class="paper" value="paper"><img class="icon" src="../assets/images/icon-paper.svg"></button>
-    <button (click)="checkResult(choosenButton = 'scissors')" class="scissors" value="scissors"><img class="icon" src="../assets/images/icon-scissors.svg"></button>
-    <button (click)="checkResult(choosenButton = 'rock')" class="rock" value="rock"><img class="icon" src="../assets/images/icon-rock.svg"></button>
+    <app-button (click)="checkResult(choosenButton = 'paper')"  class="paper"  iconImageUrl="../assets/images/icon-paper.svg"></app-button>
+    <app-button (click)="checkResult(choosenButton = 'scissors')"  class="scissors"  iconImageUrl="../assets/images/icon-scissors.svg"></app-button>
+    <app-button (click)="checkResult(choosenButton = 'rock')"  class="rock"  iconImageUrl="../assets/images/icon-rock.svg"></app-button>
   </div>
 </div>
 <div *ngIf="choosenButton !== ''" class="result-container">
   <header class="header">
     <h1 class="result" >Results</h1>
-    <h2></h2>
   </header>
     <div class="results">
       <div class="result__choices">
           <h2>Your Choice</h2>
-          <button class="{{ choosenButton }} {{ choosenButton }}--result"><img class="icon" src="../assets/images/icon-{{choosenButton}}.svg"></button>
+          <app-button class="{{choosenButton}} {{choosenButton}}--result" iconImageUrl="../assets/images/icon-{{choosenButton}}.svg"></app-button>
       </div>
       <button class="reset" (click)="goBack()">Play Again</button>
       <div class="result__choices">
           <h2>OpponentChoice</h2>
-          <button class="{{ opponentChoice }} {{ opponentChoice }}--result "><img class="icon" src="../assets/images/icon-{{opponentChoice}}.svg"></button>
-      </div>
+          <app-button class="{{opponentChoice}} {{opponentChoice}}--result" iconImageUrl="../assets/images/icon-{{opponentChoice}}.svg"></app-button>
+        </div>
     </div>
 </div>

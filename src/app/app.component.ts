@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ConstantPool } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',

@@ -69,10 +69,6 @@ header {
   flex-wrap: wrap;
 }
 
-.icon {
-  pointer-events: none;
-}
-
 .paper {
   cursor: pointer;
   background-color: #ffffff;
@@ -81,6 +77,10 @@ header {
   border-radius: 100px;
   border: 15px solid #0044ff;
   outline: none;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     background-color: #bdbdbd;
@@ -96,9 +96,17 @@ header {
   border-radius: 100px;
   border: 15px solid #eba00e;
   outline: none;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     border: 15px solid #fab835;
+  }
+
+    &--result {
+      margin: 0;
   }
 }
 
@@ -110,7 +118,10 @@ header {
   border-radius: 100px;
   outline: none;
   border: 15px solid #db3857;
-  margin: 50px 0 0 124px;
+  display: flex;
+  margin: 18px 0 0 106px;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     border: 15px solid #f54a69;
